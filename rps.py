@@ -104,12 +104,12 @@ class PS(object):
         # Step 1: solve Ax = b
         # Hint: You can use np.linalg.lstsq(A, b) to solve Ax = b
 
-        # self.N = ???
+        self.N = np.linalg.lstsq(self.L.T, self.M.T, rcond=None)[0].T
 
         # Step 2: We need to normalize the normal vectors as the norm of the normal vectors should be 1
         # Hint: You can use function normalize from sklearn.preprocessing
 
-        # self.N = ???
+        self.N = normalize(self.N, axis=1)
 
 
         #############################################
